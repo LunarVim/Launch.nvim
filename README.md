@@ -56,7 +56,7 @@ First we'll fix copy/paste
 
 - On Ubuntu
 
-  ```
+  ```sh
   sudo apt install xsel # for X11
   sudo apt install wl-clipboard # for wayland
   ```
@@ -65,13 +65,13 @@ Next we need to install python support (node is optional)
 
 - Neovim python support
 
-  ```
+  ```sh
   pip install pynvim
   ```
 
 - Neovim node support
 
-  ```
+  ```sh
   npm i -g neovim
   ```
 
@@ -79,7 +79,7 @@ We will also need `ripgrep` for Telescope to work:
 
 - Ripgrep
 
-  ```
+  ```sh
   sudo apt install ripgrep
   ```
 ---
