@@ -84,9 +84,9 @@ We will also need `ripgrep` for Telescope to work:
 
 - Ripgrep
 
-```
-sudo apt install ripgrep
-```
+  ```
+  sudo apt install ripgrep
+  ```
 ---
 
 **NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
