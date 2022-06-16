@@ -59,13 +59,6 @@ First we'll fix copy/paste
   sudo apt install wl-clipboard # for wayland
   ```
 
-- On Arch Linux
-
-  ```
-  sudo pacman -S xsel # for X11
-  sudo pacman -S wl-clipboard # for wayland
-  ```
-
 Next we need to install python support (node is optional)
 
 - Neovim python support
