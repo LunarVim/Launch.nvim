@@ -92,7 +92,10 @@ sudo apt install ripgrep
 **NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
 
 ## Fonts
-TODO
+
+I recommend using the following repo to get a "Nerd Font" (Font that supports icons)
+
+[getnf](https://github.com/ronniedroid/getnf)
 
 ## Plugins
 
