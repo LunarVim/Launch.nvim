@@ -39,6 +39,5 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
  -- relativenumber = true                  -- set relative numbered lines
-vim.cmd "set formatoptions-=cro"
  -- colorcolumn = "80"
  -- colorcolumn = "120"
