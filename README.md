@@ -122,6 +122,8 @@ TODO
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
 
+---
+
 > The computing scientist's main challenge is not to get confused by the complexities of his own making. 
 
 \- Edsger W. Dijkstra
