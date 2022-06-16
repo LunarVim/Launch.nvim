@@ -2,7 +2,7 @@
 
 > Why does this repo exist?
 
-This config attempts to provide a rock solid fully featured starting point for someone getting started with Neovim. 
+This config attempts to provide a rock solid fully featured starting point for someone new to Neovim, or just tired of maintaining the basic IDE components of their config. 
 
 > What makes is "rock solid"?
 
