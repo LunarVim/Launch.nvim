@@ -24,7 +24,7 @@ make CMAKE_BUILD_TYPE=Release
 sudo make install
 ```
 
-## Try out this config
+## Install the config
 
 Make sure to remove or move your current `nvim` directory
 
