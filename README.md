@@ -12,7 +12,7 @@ As I mentioned, this config is meant as a starting point for people new to Neovi
 
 ## Install Neovim 0.7
 
-You can install Neovim with your package manager e.g. brew, apt, pacman etc.. but remember that when you update your packages Neovim may be upgraded to then a new version.
+You can install Neovim with your package manager e.g. brew, apt, pacman etc.. but remember that when you update your packages Neovim may be upgraded to a newer version.
 
 If you would like to make sure Neovim only updates when you want it to than I recommend installing from source:
 
