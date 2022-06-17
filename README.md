@@ -92,6 +92,32 @@ I recommend using the following repo to get a "Nerd Font" (Font that supports ic
 
 [getnf](https://github.com/ronniedroid/getnf)
 
+## Configuration
+
+### LSP
+
+To add a new LSP
+
+First Enter:
+
+```
+:LspInstallInfo
+```
+
+and press `i` on the Language Server you wish to install
+
+Next you will need to add the server to this list: [servers](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/lsp/lsp-installer.lua#L6)
+
+### Formatters and linters
+
+Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/lsp/null-ls.lua#L13)
+
+**NOTE** Some are already setup as examples, remove them if you want
+
+### Plugins
+
+You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/plugins.lua#L42)
+
 ## Plugins
 
 - [packer](https://github.com/wbthomason/packer.nvim)
