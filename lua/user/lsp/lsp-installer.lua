@@ -4,15 +4,14 @@ if not status_ok then
 end
 
 local servers = {
-  "cssls",
-  "cssmodules_ls",
-  "html",
-  "jsonls",
   "sumneko_lua",
+  "cssls",
+  "html",
   "tsserver",
   "pyright",
-  "yamlls",
   "bashls",
+  "jsonls",
+  "yamlls",
 }
 
 lsp_installer.setup()

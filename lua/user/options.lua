@@ -38,6 +38,3 @@ vim.opt.fillchars.eob=" "
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
- -- relativenumber = true                  -- set relative numbered lines
- -- colorcolumn = "80"
- -- colorcolumn = "120"
