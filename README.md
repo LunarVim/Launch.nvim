@@ -157,6 +157,7 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
 
 ---
 
