@@ -26,6 +26,7 @@ vim.cmd [[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
+  vim.api.nvim_err_writeln "Failed to load packer"
   return
 end
 
@@ -95,6 +96,9 @@ return packer.startup(function(use)
   use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
   use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+
+  -- Notification manager
+  use { "rcarriga/nvim-notify", commit = "7caeaaef257ecbe95473ec79e5a82757b544f1fd" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

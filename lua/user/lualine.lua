@@ -1,5 +1,6 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
+  require "notify"("Failed to load lualine", "error")
   return
 end
 
@@ -49,7 +50,7 @@ lualine.setup {
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = {"branch"},
+    lualine_b = { "branch" },
     lualine_c = { diagnostics },
     lualine_x = { diff, spaces, "encoding", filetype },
     lualine_y = { location },
