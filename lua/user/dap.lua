@@ -1,18 +1,18 @@
 local dap_status_ok, dap = pcall(require, "dap")
 if not dap_status_ok then
-  require "notify"("Failed to load dap", "error")
+  vim.notify("Failed to load dap", "error")
   return
 end
 
 local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
-  require "notify"("Failed to load dapui", "error")
+  vim.notify("Failed to load dapui", "error")
   return
 end
 
 local dap_install_status_ok, dap_install = pcall(require, "dap-install")
 if not dap_install_status_ok then
-  require "notify"("Failed to load dap-install", "error")
+  vim.notify("Failed to load dap-install", "error")
   return
 end
 

@@ -1,6 +1,6 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
-  require "notify"("Failed to load lualine", "error")
+  vim.notify("Failed to load lualine", "error")
   return
 end
 

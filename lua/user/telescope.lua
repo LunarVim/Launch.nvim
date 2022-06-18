@@ -1,6 +1,6 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-  require "notify"("Failed to load telescope", "error")
+  vim.notify("Failed to load telescope", "error")
   return
 end
 

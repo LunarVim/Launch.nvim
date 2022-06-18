@@ -1,6 +1,6 @@
 local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
-  require "notify"("Failed to load alpha", "error")
+  vim.notify("Failed to load alpha", "error")
   return
 end
 

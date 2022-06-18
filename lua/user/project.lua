@@ -1,6 +1,6 @@
 local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
-  require "notify"("Failed to load project_nvim", "error")
+  vim.notify("Failed to load project_nvim", "error")
   return
 end
 project.setup {
@@ -14,7 +14,7 @@ project.setup {
 
 local tele_status_ok, telescope = pcall(require, "telescope")
 if not tele_status_ok then
-  require "notify"("Failed to load telescope", "error")
+  vim.notify("Failed to load telescope", "error")
   return
 end
 
