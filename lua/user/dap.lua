@@ -13,9 +13,7 @@ if not dap_install_status_ok then
   return
 end
 
-dap_install.setup {
-  installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
-}
+dap_install.setup {}
 
 dap_install.config("python", {})
 -- add other configs here
