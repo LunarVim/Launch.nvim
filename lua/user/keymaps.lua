@@ -32,11 +32,11 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+
+-- close window
+keymap("n", "<leader>q", "<cmd>q<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -60,9 +60,17 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>h", ":Telescope oldfiles<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "gw", ":Gwrite<CR>", opts)
+keymap("n", "gs", ":Git<CR>", opts)
+keymap("n", "gc", ":Git commit -s <CR>", opts)
+keymap("n", "gp", ":Dispatch git push", opts)
+keymap("n", "gpf", ":Dispatch git push --force", opts)
+keymap("n", "gca", ":Git commit -s --amend", opts)
+keymap("n", "gpl", ":Dispatch git pull --rebase", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
