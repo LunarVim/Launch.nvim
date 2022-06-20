@@ -36,6 +36,9 @@ packer.init {
       return require("packer.util").float { border = "rounded" }
     end,
   },
+  git = {
+    clone_timeout = 300, -- Timeout, in seconds, for git clones
+  },
 }
 
 -- Install your plugins here
