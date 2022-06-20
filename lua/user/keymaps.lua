@@ -6,6 +6,9 @@ local opts = { silent = true }
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
+-- Clear highlights
+-- keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+
 
 -- Modes
 --   normal_mode = "n",
