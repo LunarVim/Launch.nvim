@@ -16,14 +16,27 @@ if not dap_install_status_ok then
   return
 end
 
-dap_install.setup {
-  installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
-}
+dap_install.setup {}
 
 dap_install.config("python", {})
 -- add other configs here
 
-dapui.setup {}
+dapui.setup {
+  sidebar = {
+    elements = {
+      {
+        id = "scopes",
+        size = 0.25, -- Can be float or integer > 1
+      },
+      { id = "breakpoints", size = 0.25 },
+    },
+    size = 40,
+    position = "right", -- Can be "left", "right", "top", "bottom"
+  },
+  tray = {
+    elements = {},
+  },
+}
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
