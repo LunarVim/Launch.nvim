@@ -68,8 +68,27 @@ M.on_attach = function(client, bufnr)
     return
   end
 
+  lsp_keymaps(bufnr)
+  local status_ok, illuminate = pcall(require, "illuminate")
+  if not status_ok then
+    print "test"
+    return
+  end
+  illuminate.on_attach(client)
+
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
+  end
+
+  if client.name == "jdt.ls" then
+    if JAVA_DAP_ACTIVE then
+      require("jdtls").setup_dap { hotcodereplace = "auto" }
+      require("jdtls.dap").setup_dap_main_class_configs()
+    end
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = false
+    -- vim.lsp.codelens.refresh()
+    print "hello"
   end
 
   if client.name == "sumneko_lua" then
@@ -79,13 +98,6 @@ M.on_attach = function(client, bufnr)
   M.capabilities = vim.lsp.protocol.make_client_capabilities()
   M.capabilities.textDocument.completion.completionItem.snippetSupport = true
   M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
-
-  lsp_keymaps(bufnr)
-  local status_ok, illuminate = pcall(require, "illuminate")
-  if not status_ok then
-    return
-  end
-  illuminate.on_attach(client)
 end
 
 return M
