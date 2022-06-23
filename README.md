@@ -56,9 +56,18 @@ You can read more about it here: [google-java-format](https://github.com/google/
 
 Alternatively you can use the formatter builtin with `jdtls` by:
 
-- Removing this line: 
+- Removing this line: [null-ls formatter](https://github.com/LunarVim/nvim-basic-ide/blob/ef5553049148cfd69b3a6119395f05c79a8f8895/lua/user/lsp/null-ls.lua#L15)
+
+- Setting `jdtls` formatter to true [here](https://github.com/LunarVim/nvim-basic-ide/blob/ef5553049148cfd69b3a6119395f05c79a8f8895/ftplugin/java.lua#L123)
 
 ## Deeper Dive
 
 For a better understanding of how this works and to keep updated with the project make sure to checkout the [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls) repository.
 
+## Keybindings
+
+- General: [keybindings](https://github.com/LunarVim/nvim-basic-ide/blob/java-ide-0.7/lua/user/keymaps.lua)
+
+- LSP: [keybindings](https://github.com/LunarVim/nvim-basic-ide/blob/ef5553049148cfd69b3a6119395f05c79a8f8895/lua/user/lsp/handlers.lua#L45)
+
+- Java Specific: [keybindings](https://github.com/LunarVim/nvim-basic-ide/blob/ef5553049148cfd69b3a6119395f05c79a8f8895/ftplugin/java.lua#L192)
