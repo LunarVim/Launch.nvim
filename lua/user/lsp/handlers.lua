@@ -76,23 +76,13 @@ M.on_attach = function(client, bufnr)
   end
   illuminate.on_attach(client)
 
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-  end
-
   if client.name == "jdt.ls" then
     if JAVA_DAP_ACTIVE then
       require("jdtls").setup_dap { hotcodereplace = "auto" }
       require("jdtls.dap").setup_dap_main_class_configs()
     end
-    client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = false
-    -- vim.lsp.codelens.refresh()
-    print "hello"
-  end
-
-  if client.name == "sumneko_lua" then
-    client.resolved_capabilities.document_formatting = false
+    vim.lsp.codelens.refresh()
   end
 
   M.capabilities = vim.lsp.protocol.make_client_capabilities()
