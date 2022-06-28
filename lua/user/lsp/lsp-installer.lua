@@ -79,11 +79,6 @@ for _, server in pairs(servers) do
         capabilities = require("user.lsp.handlers").capabilities,
         settings = {
           ["rust-analyzer"] = {
-            -- completion = {
-            --   postfix = {
-            --     enable = false,
-            --   },
-            -- },
             lens = {
               enable = true,
             },
