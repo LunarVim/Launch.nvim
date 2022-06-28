@@ -43,7 +43,6 @@ for _, server in pairs(servers) do
 
   if server == "rust_analyzer" then
     local keymap = vim.keymap.set
-    -- Silent keymap option
     local key_opts = { silent = true }
 
     keymap("n", "<leader>rh", "<cmd>RustSetInlayHints<Cr>", key_opts)
@@ -65,7 +64,6 @@ for _, server in pairs(servers) do
     keymap("n", "<leader>rss", "<cmd>RustSSR<Cr>", key_opts)
     keymap("n", "<leader>rxd", "<cmd>RustOpenExternalDocs<Cr>", key_opts)
 
-    -- vim.lsp.codelens.refresh()
     require("rust-tools").setup {
       tools = {
         on_initialized = function()
