@@ -14,7 +14,9 @@ local servers = {
   "yamlls",
 }
 
-lsp_installer.setup()
+lsp_installer.setup({
+  ensure_installed = servers
+})
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
