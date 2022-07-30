@@ -16,12 +16,20 @@ You can install Neovim with your package manager e.g. brew, apt, pacman etc.. bu
 
 If you would like to make sure Neovim only updates when you want it to than I recommend installing from source:
 
+
+### Linux/Mac OS
 ```sh
 git clone https://github.com/neovim/neovim.git
 cd neovim
 git checkout release-0.7
 make CMAKE_BUILD_TYPE=Release
 sudo make install
+```
+
+Note, a neovim install from source on Mac OS may require <code>cmake</code> and <code>automake</code> to be installed first.
+
+```sh
+brew install cmake automake
 ```
 
 ## Install the config
