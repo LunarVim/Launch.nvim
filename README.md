@@ -16,6 +16,8 @@ You can install Neovim with your package manager e.g. brew, apt, pacman etc.. bu
 
 If you would like to make sure Neovim only updates when you want it to than I recommend installing from source:
 
+**NOTE** Verify the required [build prerequisites](https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites) for your system.
+
 ```sh
 git clone https://github.com/neovim/neovim.git
 cd neovim
