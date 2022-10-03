@@ -1,6 +1,4 @@
 local servers = {
-  "sumneko_lua"
-
 }
 
 local settings = {
