@@ -2,19 +2,21 @@
 
 > Why does this repo exist?
 
-This config attempts to provide a rock solid fully featured starting point for someone new to Neovim, or just tired of maintaining the basic IDE components of their config. 
+This config attempts to provide a rock solid fully featured starting point for someone new to Neovim, or just tired of maintaining the basic IDE components of their config.
 
 > What makes it "rock solid"?
 
 All of the included plugins are pinned to a version that ensures they are compatible and will not update potentially introducing errors into your config. For every Neovim release I will update this repo along with the community to keep it up to date with the newest versions.
 
-As I mentioned, this config is meant as a starting point for people new to Neovim who want a familiar IDE experience. The config has a very simple structure that makes it easy to add new plugins. 
+As I mentioned, this config is meant as a starting point for people new to Neovim who want a familiar IDE experience. The config has a very simple structure that makes it easy to add new plugins.
 
 ## Install Neovim 0.8
 
 You can install Neovim with your package manager e.g. brew, apt, pacman etc.. but remember that when you update your packages Neovim may be upgraded to a newer version.
 
 If you would like to make sure Neovim only updates when you want it to than I recommend installing from source:
+
+**NOTE** Verify the required [build prerequisites](https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites) for your system.
 
 ```sh
 git clone https://github.com/neovim/neovim.git
@@ -32,9 +34,9 @@ Make sure to remove or move your current `nvim` directory
 git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
 ```
 
-Run `nvim` and wait for the plugins to be installed 
+Run `nvim` and wait for the plugins to be installed
 
-**NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
+**NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
 **NOTE** Checkout this file for some predefined keymaps: [keymaps](https://github.com/LunarVim/nvim-basic-ide/blob/master/lua/user/keymaps.lua)
 
@@ -75,13 +77,14 @@ Next we need to install python support (node is optional)
   npm i -g neovim
   ```
 
-We will also need `ripgrep` for Telescope to work: 
+We will also need `ripgrep` for Telescope to work:
 
 - Ripgrep
 
   ```sh
   sudo apt install ripgrep
   ```
+
 ---
 
 **NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
@@ -158,8 +161,9 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
+
 ---
 
-> The computing scientist's main challenge is not to get confused by the complexities of his own making. 
+> The computing scientist's main challenge is not to get confused by the complexities of his own making.
 
 \- Edsger W. Dijkstra
