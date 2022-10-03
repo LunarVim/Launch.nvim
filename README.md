@@ -10,7 +10,7 @@ All of the included plugins are pinned to a version that ensures they are compat
 
 As I mentioned, this config is meant as a starting point for people new to Neovim who want a familiar IDE experience. The config has a very simple structure that makes it easy to add new plugins. 
 
-## Install Neovim 0.7
+## Install Neovim 0.8
 
 You can install Neovim with your package manager e.g. brew, apt, pacman etc.. but remember that when you update your packages Neovim may be upgraded to a newer version.
 
@@ -19,7 +19,7 @@ If you would like to make sure Neovim only updates when you want it to than I re
 ```sh
 git clone https://github.com/neovim/neovim.git
 cd neovim
-git checkout release-0.7
+git checkout release-0.8
 make CMAKE_BUILD_TYPE=Release
 sudo make install
 ```
@@ -147,8 +147,9 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
+- [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
@@ -157,7 +158,6 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
-
 ---
 
 > The computing scientist's main challenge is not to get confused by the complexities of his own making. 
