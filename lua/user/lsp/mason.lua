@@ -1,5 +1,4 @@
-local servers = {
-}
+local servers = {}
 
 local settings = {
 	ui = {
@@ -35,15 +34,9 @@ for _, server in pairs(servers) do
 
 	server = vim.split(server, "@")[1]
 
-	if server == "sumneko_lua" then
-		local sumneko_opts = require("user.lsp.settings.sumneko_lua")
-		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-		-- opts = vim.tbl_deep_extend("force", require("lua-dev").setup(), opts)
-	end
-
-	if server == "pyright" then
-		local pyright_opts = require("user.lsp.settings.pyright")
-		opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+	local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
+	if require_ok then
+		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
 
 	lspconfig[server].setup(opts)
