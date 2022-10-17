@@ -132,7 +132,7 @@ local servers = {
 }
 ```
 
-2. Manually install the binary from the nvim-lspconfig, to your path. For terraform_lsp [example](https://github.com/LunarVim/nvim-basic-ide/blob/f03955dc1e5879164f9229d44d98ca81a948cbfb/lua/user/lsp/mason.lua#L1-L10)
+2. Manually install the binary from the nvim-lspconfig, to your path. For terraform_lsp [example](https://github.com/juliosueiras/terraform-lsp/releases)
 
 ### Formatters and linters
 
