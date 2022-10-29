@@ -36,6 +36,8 @@ git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
 
 Run `nvim` and wait for the plugins to be installed
 
+**NOTE** First time you will get an error just ignore them and press enter, it will say nvim-ts-context-commentstring is not installed but that is fine just close and reopen nvim and everything should be fine  
+
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
 **NOTE** Checkout this file for some predefined keymaps: [keymaps](https://github.com/LunarVim/nvim-basic-ide/blob/master/lua/user/keymaps.lua)
