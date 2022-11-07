@@ -31,7 +31,7 @@ sudo make install
 Make sure to remove or move your current `nvim` directory
 
 ```sh
-git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
+git clone https://github.com/HunderaAwoke/nvim-basic-ide.git ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed
