@@ -25,8 +25,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -67,14 +67,21 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
-
+-- toggle Term
+keymap("n", "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", opts)
+keymap("n", "<leader>tb", "<cmd>lua _BASH_TOGGLE()<cr>", opts)
+keymap("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts)
+keymap("n", "<leader>tB", "<cmd>lua _BASHTOP_TOGGLE()<cr>", opts)
+keymap("n", "<leader>th", "<cmd>lua _HTOP_TOGGLE()<cr>", opts)
+-- Ranger --
+keymap("n", "<C-f>", ":RnvimrToggle<CR>", opts)
 -- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
-keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
-keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+--keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+--keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
+--keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
+--keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts
+--keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
+--keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
+--keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
+--keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+--keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)

@@ -1,0 +1,2 @@
+-- Lua
+require("onedark").setup({})
