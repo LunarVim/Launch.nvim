@@ -170,7 +170,7 @@ require("lazy").setup {
       },
       {
         "saadparwaiz1/cmp_luasnip",
-        commit = "18095520391186d634a0045dacaa346291096566",
+        commit = "9bff06b570df29434a88f9c6a9cea3b21ca17208",
       },
       {
         "hrsh7th/cmp-nvim-lua",
