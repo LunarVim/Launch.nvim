@@ -170,7 +170,7 @@ require("lazy").setup {
       },
       {
         "saadparwaiz1/cmp_luasnip",
-        commit = "9bff06b570df29434a88f9c6a9cea3b21ca17208",
+        commit = "18095520391186d634a0045dacaa346291096566",
       },
       {
         "hrsh7th/cmp-nvim-lua",
@@ -183,7 +183,7 @@ require("lazy").setup {
   },
   {
     "L3MON4D3/LuaSnip",
-    commit = "18095520391186d634a0045dacaa346291096566",
+    commit = "9bff06b570df29434a88f9c6a9cea3b21ca17208",
     event = "InsertEnter",
     dependencies = {
       "rafamadriz/friendly-snippets",
