@@ -130,7 +130,7 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
-  "terraform_lsp" -- New LSP
+	"terraform_lsp" -- New LSP
 }
 ```
 
