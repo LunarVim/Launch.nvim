@@ -36,7 +36,7 @@ git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
 
 Run `nvim` and wait for the plugins to be installed
 
-**NOTE** First time you will get an error just ignore them and press enter, it will say nvim-ts-context-commentstring is not installed but that is fine just close and reopen nvim and everything should be fine  
+**NOTE** First time you will get an error just ignore them and press enter, it will say nvim-ts-context-commentstring is not installed but that is fine just close and reopen nvim and everything should be fine
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
@@ -150,7 +150,7 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 
 ## Plugins
 
-- [packer](https://github.com/wbthomason/packer.nvim)
+- [lazy](https://github.com/folke/lazy.nvim)
 - [plenary](https://github.com/nvim-lua/plenary.nvim)
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
