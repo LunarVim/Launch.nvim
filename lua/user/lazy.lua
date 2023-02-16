@@ -32,6 +32,14 @@ require("lazy").setup {
       require "user.indentline"
     end,
   },
+  {
+    "folke/which-key.nvim",
+    commit = "5224c261825263f46f6771f1b644cae33cd06995",
+    event = "VeryLazy",
+    config = function()
+      require "user.whichkey"
+    end,
+  },
   { "nvim-lua/plenary.nvim", commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9", lazy = true },
   {
     "windwp/nvim-autopairs",
