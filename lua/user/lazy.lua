@@ -54,7 +54,6 @@ require("lazy").setup {
     commit = "d3a68725e8349212a359d1914fc6e86ff31e4142",
     event = "BufReadPost",
     dependencies = {
-      "nvim-treesitter/playground",
       {
         "JoosepAlviste/nvim-ts-context-commentstring",
         event = "VeryLazy",
@@ -234,29 +233,29 @@ require("lazy").setup {
       require "user.gitsigns"
     end,
   },
-	{
-		"mfussenegger/nvim-dap",
-		commit = "6b12294a57001d994022df8acbe2ef7327d30587",
-		event = "VeryLazy",
-		config = function()
-			require("user.dap")
-		end,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13",
-		event = "VeryLazy",
-		config = function()
-			require("user.dapui")
-		end,
-	},
-	{
-		"ravenxrz/DAPInstall.nvim",
-		commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de",
-		lazy = true,
-		config = function()
-			require("dap_install").setup({})
-			require("dap_install").config("python", {})
-		end,
-	},
+  {
+    "mfussenegger/nvim-dap",
+    commit = "6b12294a57001d994022df8acbe2ef7327d30587",
+    event = "VeryLazy",
+    config = function()
+      require "user.dap"
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13",
+    event = "VeryLazy",
+    config = function()
+      require "user.dapui"
+    end,
+  },
+  {
+    "ravenxrz/DAPInstall.nvim",
+    commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de",
+    lazy = true,
+    config = function()
+      require("dap_install").setup {}
+      require("dap_install").config("python", {})
+    end,
+  },
 }
