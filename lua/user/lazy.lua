@@ -37,7 +37,7 @@ require("lazy").setup {
     commit = "5224c261825263f46f6771f1b644cae33cd06995",
     event = "VeryLazy",
     config = function()
-      require "user.whichkey"
+      -- require "user.whichkey"
     end,
   },
   { "nvim-lua/plenary.nvim", commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9", lazy = true },
@@ -199,11 +199,12 @@ require("lazy").setup {
   },
   {
     "neovim/nvim-lspconfig",
-    commit = "d3c82d2f9a6fd91ec1ffee645664d2cc57e706d9",
+    commit = "649137cbc53a044bffde36294ce3160cb18f32c7",
     lazy = true,
   },
   {
     "williamboman/mason.nvim",
+    commit = "4546dec8b56bc56bc1d81e717e4a935bc7cd6477",
     cmd = "Mason",
     event = "BufReadPre",
     config = function()
@@ -212,7 +213,7 @@ require("lazy").setup {
     dependencies = {
       {
         "williamboman/mason-lspconfig.nvim",
-        commit = "7a97a77eee486ae152d2c559a459eda7c8aa12aa",
+        commit = "93e58e100f37ef4fb0f897deeed20599dae9d128",
         lazy = true,
       },
     },
