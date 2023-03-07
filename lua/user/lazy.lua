@@ -37,7 +37,7 @@ require("lazy").setup {
     commit = "5224c261825263f46f6771f1b644cae33cd06995",
     event = "VeryLazy",
     config = function()
-      -- require "user.whichkey"
+      require("which-key").setup {}
     end,
   },
   { "nvim-lua/plenary.nvim", commit = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9", lazy = true },
