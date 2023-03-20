@@ -45,6 +45,9 @@ keymap("v", "p", '"_dP', opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
+-- Better delete a word backwards with Ctrl-Backspace.
+keymap("i", "<C-BS>", "<C-W>", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
