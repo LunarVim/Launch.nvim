@@ -1,10 +1,11 @@
 local M = {
   "kyazdani42/nvim-tree.lua",
   commit = "59e65d88db177ad1e6a8cffaafd4738420ad20b6",
+  event = "VimEnter"
 }
 
 function M.config()
-  local tree_cb = require("nvim-tree").config.nvim_tree_callback
+  local tree_cb = require("nvim-tree.config").nvim_tree_callback
   require("nvim-tree").setup {
     update_focused_file = {
       enable = true,
@@ -53,8 +54,8 @@ function M.config()
       mappings = {
         list = {
           { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-          { key = "h", cb = tree_cb "close_node" },
-          { key = "v", cb = tree_cb "vsplit" },
+          { key = "h",                  cb = tree_cb "close_node" },
+          { key = "v",                  cb = tree_cb "vsplit" },
         },
       },
     },
