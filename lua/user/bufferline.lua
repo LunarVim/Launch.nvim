@@ -1,7 +1,7 @@
 local M = {
   "akinsho/bufferline.nvim",
   commit = "c7492a76ce8218e3335f027af44930576b561013",
-  event = { "InsertEnter", "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
+  event = { "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
   dependencies = {
     {
       "moll/vim-bbye",
