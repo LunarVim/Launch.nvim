@@ -50,7 +50,7 @@ function M.config()
   end
 
   for _, server in pairs(require("utils").servers) do
-    opts = {
+    Opts = {
       on_attach = on_attach,
       capabilities = capabilities,
     }
@@ -59,10 +59,10 @@ function M.config()
 
     local require_ok, conf_opts = pcall(require, "settings." .. server)
     if require_ok then
-      opts = vim.tbl_deep_extend("force", conf_opts, opts)
+      Opts = vim.tbl_deep_extend("force", conf_opts, Opts)
     end
 
-    lspconfig[server].setup(opts)
+    lspconfig[server].setup(Opts)
   end
 end
 
