@@ -4,18 +4,18 @@ local M = {
   event = { "BufReadPre", "BufAdd", "BufNew", "BufReadPost" },
   dependencies = {
     {
-      "moll/vim-bbye",
-      commit = "25ef93ac5a87526111f43e5110675032dbcacf56",
+      "famiu/bufdelete.nvim",
+      commit = "8933abc09df6c381d47dc271b1ee5d266541448e",
     },
   },
 }
 
 M.opts = {
   options = {
-    close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+    close_command = "Bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-    separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+    separator_style = "thin",            -- | "thick" | "thin" | { 'any', 'any' },
   },
   highlights = {
     fill = {
