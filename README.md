@@ -38,7 +38,7 @@ Run `nvim` and wait for the plugins to be installed
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
-**NOTE** Checkout this file for some predefined keymaps: [keymaps](https://github.com/LunarVim/nvim-basic-ide/tree/lazy/lua/keymaps.lua)
+**NOTE** Checkout this file for some predefined keymaps: [keymaps](https://github.com/LunarVim/nvim-basic-ide/tree/master/lua/keymaps.lua)
 
 ## Get healthy
 
@@ -109,12 +109,12 @@ First Enter:
 
 and press `i` on the Language Server you wish to install
 
-Next you will need to add the server to this list: [servers](https://github.com/LunarVim/nvim-basic-ide/tree/lazy/lua/utils/init.lua#L3)
+Next you will need to add the server to this list: [servers](https://github.com/LunarVim/nvim-basic-ide/tree/master/lua/utils/init.lua#L3)
 Note: Builtin LSP doesn't contain all lsps from [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#terraform_lsp).
 
 If you want to install any from there, for example terraform_lsp(which adds more functionality than terraformls, like complete resource listing),
 
-1. You can add the lsp name in [mason lsp block](https://github.com/LunarVim/nvim-basic-ide/tree/lazylua/user/utils/init.lua#L3-L13)
+1. You can add the lsp name in [mason lsp block](https://github.com/LunarVim/nvim-basic-ide/tree/master/user/utils/init.lua#L3-L13)
 
 ```lua
 -- lua/utils/init.lua
@@ -135,13 +135,13 @@ M.servers = {
 
 ### Formatters and linters
 
-Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/tree/lazy/lua/user/lsp/null-ls.lua#L29)
+Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/e6b6c96280ca730a2564f2e36050df055acfb1a8/lua/user/null-ls.lua#L22)
 
 **NOTE** Some are already setup as examples, remove them if you want
 
 ### Plugins
 
-### You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/tree/lazy/lua/user)
+### You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/tree/master/lua/user)
 
 ## Plugins
 
