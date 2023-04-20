@@ -153,7 +153,7 @@ Just make a new file with your plugin and the configuration in it,
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
-- [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
