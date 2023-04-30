@@ -10,7 +10,7 @@ All the included plugins are pinned to a version that ensures they are compatibl
 
 As I mentioned, this config is meant as a starting point for people new to Neovim who want a familiar IDE experience. The config has a very simple structure that makes it easy to add new plugins.
 
-#### Migration guide to lazy from packer
+### Migration guide to lazy from packer
 
 Now this config uses `lazy.nvim` as a plugin manager, so if you are migrating from packer you should probably remove
 `$HOME/.local/share/nvim` and re-open nvim to re-install the plugins to not face any issues.
