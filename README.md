@@ -148,8 +148,7 @@ Make sure the formatter or linter is installed and add it to this setup function
 
 ### You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/tree/master/lua/user)
 
-Just make a new file with your plugin and the configuration in it,
-[Which-key](https://github.com/LunarVim/nvim-basic-ide/blob/master/lua/user/which-key.lua) file is a very good example of how you would do it.
+Heres the wiki for installing new plugins refer to this: [wiki](https://github.com/LunarVim/nvim-basic-ide/wiki/adding_new_plugins)
 
 ## Plugins
 
