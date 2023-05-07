@@ -8,15 +8,43 @@ if not dap_ui_status_ok then
   return
 end
 
-local dap_install_status_ok, dap_install = pcall(require, "dap-install")
-if not dap_install_status_ok then
-  return
-end
-
-dap_install.setup {}
-
-dap_install.config("python", {})
+-- local dap_install_status_ok, dap_install = pcall(require, "dap-install")
+-- if not dap_install_status_ok then
+--   return
+-- end
+--
+-- dap_install.setup {}
+--
+-- dap_install.config("python", {})
+--
+-- dap_install.config("jsnode", {})
 -- add other configs here
+local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+dap.adapters.node2 = {
+  type = 'executable',
+  command = 'node-debug2-adapter',
+  args = {},
+}
+dap.configurations.javascript = {
+  {
+    name = 'Launch',
+    type = 'node2',
+    request = 'launch',
+    program = '${file}',
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = 'inspector',
+    console = 'integratedTerminal',
+  },
+  {
+    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
+    name = 'Attach to process',
+    type = 'node2',
+    request = 'attach',
+    processId = require'dap.utils'.pick_process,
+  },
+}
+
 
 dapui.setup {
   expand_lines = true,
