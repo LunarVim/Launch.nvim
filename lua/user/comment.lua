@@ -6,7 +6,7 @@ local M = {
     {
       "JoosepAlviste/nvim-ts-context-commentstring",
       event = "VeryLazy",
-      commit = "a0f89563ba36b3bacd62cf967b46beb4c2c29e52",
+      commit = "729d83ecb990dc2b30272833c213cc6d49ed5214",
     },
   },
 }
