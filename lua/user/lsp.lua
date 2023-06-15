@@ -38,14 +38,6 @@ function M.config()
 
   local lspconfig = require "lspconfig"
   local on_attach = function(client, bufnr)
-    if client.name == "tsserver" then
-      client.server_capabilities.documentFormattingProvider = false
-    end
-
-    if client.name == "sumneko_lua" then
-      client.server_capabilities.documentFormattingProvider = false
-    end
-
     lsp_keymaps(bufnr)
     require("illuminate").on_attach(client)
   end
