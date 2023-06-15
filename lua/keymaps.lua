@@ -39,7 +39,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
-keymap("v", "p", 'P', opts)
+keymap("v", "p", "P", opts)
 
 -- Insert --
 -- Press jk fast to enter
