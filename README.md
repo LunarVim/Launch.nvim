@@ -164,7 +164,6 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 - [project.nvim](https://github.com/ahmedkhalf/project.nvim)
-- [impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
