@@ -15,13 +15,10 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<leader>q", ":q<CR>", opts)
+keymap("n", "<leader>w", ":w<CR>", opts)
 
+-- Normal --
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -39,7 +36,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
-keymap("v", "p", "P", opts)
+keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -56,17 +53,28 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>sf", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>st", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>sp", ":Telescope projects<CR>", opts)
+keymap("n", "<leader>sb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>sw", ":GrepperGit <C-r><C-w><CR>")
+
+-- UndoTree
+keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
+
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", opts)
+keymap("n", "<leader>gj", "<cmd>Gitsigns next_hunk<CR>", opts)
+keymap("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<CR>", opts)
+keymap("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", opts)
+keymap("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", opts)
+keymap("n", "<leader>gc", "<cmd>DiffviewClose<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
-keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
@@ -81,3 +89,33 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+-- Primeagen keybindings
+
+keymap("v", "J", ":m '>+1<CR>gv=gv")
+keymap("v", "K", ":m '<-2<CR>gv=gv")
+
+keymap("n", "J", "mzJ`z")
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
+
+-- greatest remap ever
+keymap("x", "<leader>p", "\"_dP")
+
+-- next greatest remap ever : asbjornHaland
+keymap("n", "<leader>y", "\"+y")
+keymap("v", "<leader>y", "\"+y")
+keymap("n", "<leader>Y", "\"+Y")
+
+keymap("n", "<leader>d", "\"_d")
+keymap("v", "<leader>d", "\"_d")
+
+
+keymap("n", "<C-n>", "<cmd>cnext<CR>zz")
+keymap("n", "<C-t>", "<cmd>cprev<CR>zz")
+keymap("n", "<leader>j", "<cmd>lnext<CR>zz")
+keymap("n", "<leader>k", "<cmd>lprev<CR>zz")
+
+keymap("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
