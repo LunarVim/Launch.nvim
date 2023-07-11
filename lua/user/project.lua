@@ -4,7 +4,6 @@ local M = {
   dependencies = {
     {
       "nvim-telescope/telescope.nvim",
-      commit = "203bf5609137600d73e8ed82703d6b0e320a5f36",
       event = "Bufenter",
       cmd = { "Telescope" },
     },
