@@ -1,6 +1,6 @@
 local M = {
-  "numToStr/Comment.nvim",
-  event = "VeryLazy",
+  "b0o/schemastore.nvim",
+  lazy = true,
 }
 
 function M.config() end

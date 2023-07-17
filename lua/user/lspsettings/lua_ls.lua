@@ -5,7 +5,13 @@ return {
         enable = false,
       },
       diagnostics = {
-        globals = { "vim" },
+        globals = { "vim", "spec" },
+      },
+      runtime = {
+        version = "LuaJIT",
+        special = {
+          spec = "require",
+        },
       },
       workspace = {
         library = {
