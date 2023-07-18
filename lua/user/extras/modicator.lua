@@ -1,6 +1,6 @@
 local M = {
   "mawkler/modicator.nvim",
-  event = "ColorScheme",
+  event = "BufEnter",
 }
 
 function M.config()

@@ -6,6 +6,8 @@ local M = {
 function M.config()
   require("illuminate").configure {
     filetypes_denylist = {
+      "mason",
+      "DressingInput",
       "qf",
       "dirvish",
       "fugitive",

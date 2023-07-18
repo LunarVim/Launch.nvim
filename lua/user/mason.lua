@@ -15,7 +15,8 @@ M.servers = {
   "bashls",
   "jsonls",
   "yamlls",
-  "marksman"
+  "marksman",
+  "tailwindcss",
 }
 
 function M.config()

@@ -7,6 +7,18 @@ local M = {
       "JoosepAlviste/nvim-ts-context-commentstring",
       event = "VeryLazy",
     },
+    -- {
+    --   "HiPhish/nvim-ts-rainbow2",
+    --   event = "VeryLazy",
+    -- },
+    {
+      "windwp/nvim-ts-autotag",
+      event = "VeryLazy",
+    },
+    {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+    },
   },
 }
 function M.config()
@@ -14,15 +26,11 @@ function M.config()
 
   configs.setup {
     ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
-    -- ensure_installed = "all", -- one of "all" or a list of languages
-    ignore_install = { "" }, -- List of parsers to ignore installing
-    sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-    highlight = {
-      enable = true, -- false will disable the whole extension
-    },
-    autopairs = {
-      enable = true,
-    },
+    -- ensure_installed = "all"
+    ignore_install = { "" },
+    sync_install = false,
+    highlight = { enable = true },
+    autopairs = { enable = true },
     indent = { enable = true },
     matchup = {
       enable = { "astro" },
@@ -32,6 +40,24 @@ function M.config()
       enable = true,
       enable_autocmd = false,
     },
+    autotag = { enable = true },
+    -- rainbow = {
+    --   enable = false,
+    --   query = {
+    --     "rainbow-parens",
+    --   },
+    --   strategy = require("ts-rainbow").strategy.global,
+    --   hlgroups = {
+    --     -- "TSRainbowRed",
+    --     "TSRainbowBlue",
+    --     -- "TSRainbowOrange",
+    --     -- "TSRainbowCoral",
+    --     "TSRainbowPink",
+    --     "TSRainbowYellow",
+    --     -- "TSRainbowViolet",
+    --     -- "TSRainbowGreen",
+    --   },
+    -- },
   }
 end
 
