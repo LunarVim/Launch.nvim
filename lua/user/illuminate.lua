@@ -8,8 +8,10 @@ function M.config()
     filetypes_denylist = {
       "mason",
       "DressingInput",
+      "NeogitCommitMessage",
       "qf",
       "dirvish",
+      "minifiles",
       "fugitive",
       "alpha",
       "NvimTree",
@@ -20,6 +22,7 @@ function M.config()
       "lir",
       "DiffviewFiles",
       "Outline",
+      "Jaq",
       "spectre_panel",
       "toggleterm",
       "DressingSelect",

@@ -73,7 +73,7 @@ function M.config()
         line_no = false,
 
         -- Size of terminal
-        size = 60,
+        size = 50,
       },
     },
   }
@@ -82,6 +82,17 @@ function M.config()
   local keymap = vim.api.nvim_set_keymap
 
   keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
+
+  vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "Jaq" },
+    callback = function()
+      vim.cmd [[
+      nnoremap <silent> <buffer> <m-r> :close<CR>
+      " nnoremap <silent> <buffer> <m-r> <NOP>
+      set nobuflisted
+    ]]
+    end,
+  })
 end
 
 return M
