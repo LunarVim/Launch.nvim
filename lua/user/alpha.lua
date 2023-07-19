@@ -40,6 +40,7 @@ function M.config()
   dashboard.section.buttons.val = {
     button("f", icons.ui.Files .. " Find file", ":Telescope find_files <CR>"),
     button("e", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert <CR>"),
+    -- button("s", icons.ui.SignIn .. " Load session", ":lua require('persistence').load()<CR>"),
     button("p", icons.git.Repo .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
     button("r", icons.ui.History .. " Recent files", ":Telescope oldfiles <CR>"),
     button("t", icons.ui.List .. " Find text", ":Telescope live_grep <CR>"),
