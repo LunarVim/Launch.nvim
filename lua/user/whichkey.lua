@@ -62,6 +62,7 @@ function M.config()
       b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
       c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
       f = { "<cmd>Telescope find_files<cr>", "Find files" },
+      p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
       t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
       s = { "<cmd>Telescope grep_string<cr>", "Find String" },
       h = { "<cmd>Telescope help_tags<cr>", "Help" },
@@ -134,9 +135,12 @@ function M.config()
         "<cmd>lua require('telescope').extensions['telescope-tabs'].list_tabs(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Tabs'})<cr>",
         "Find Tab",
       },
-      n = { "<cmd>tabnew %<cr>", "New Tab" },
-      c = { "<cmd>tabclose<cr>", "Close Tab" },
-      o = { "<cmd>tabonly<cr>", "Only Tab" },
+      a = { "<cmd>$tabnew<cr>", "New Tab" },
+      A = { "<cmd>tabnew %<cr>", "New Tab" },
+      n = { "<cmd>tabn<cr>", "Next Tab" },
+      p = { "<cmd>tabp<cr>", "Prev Tab" },
+      h = { "<cmd>-tabmove<cr>", "Move Left" },
+      l = { "<cmd>+tabmove<cr>", "Move Right" },
     },
 
     T = {

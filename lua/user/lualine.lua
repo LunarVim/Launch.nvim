@@ -2,7 +2,10 @@ local M = {
   "nvim-lualine/lualine.nvim",
 }
 
+
 function M.config()
+  local sl_hl = vim.api.nvim_get_hl_by_name("StatusLine", true)
+  vim.api.nvim_set_hl(0, "Copilot", { fg = "#6CC644", bg = sl_hl.background })
   local icons = require "user.icons"
   local diff = {
     "diff",
@@ -30,11 +33,10 @@ function M.config()
     end
 
     if copilot_active then
-      return icons.git.Octoface
+      return "%#Copilot#" .. icons.git.Octoface .. "%*"
     end
     return ""
   end
-
 
   require("lualine").setup {
     options = {
@@ -50,7 +52,7 @@ function M.config()
       lualine_y = { "progress" },
       lualine_z = { "location" },
     },
-    extensions = { "lazy" },
+    extensions = { "lazy", "quickfix", "trouble", "man", "fugitive" },
   }
 end
 
