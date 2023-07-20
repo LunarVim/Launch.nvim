@@ -43,9 +43,22 @@ function M.common_capabilities()
 end
 
 function M.config()
-  local servers = require("user.mason").servers
   local lspconfig = require "lspconfig"
   local icons = require "user.icons"
+
+  local servers = {
+    "lua_ls",
+    "cssls",
+    "html",
+    "tsserver",
+    "astro",
+    "pyright",
+    "bashls",
+    "jsonls",
+    "yamlls",
+    "marksman",
+    "tailwindcss",
+  }
 
   local default_diagnostic_config = {
     signs = {
