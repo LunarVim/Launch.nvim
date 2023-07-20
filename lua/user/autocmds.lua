@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "netrw",
     "Jaq",
     "qf",
+    "git",
     "help",
     "man",
     "lspinfo",
