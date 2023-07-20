@@ -19,7 +19,7 @@ function M.config()
       -- publish_diagnostic_on = "insert_leave",
       -- array of strings("fix_all"|"add_missing_imports"|"remove_unused")
       -- specify commands exposed as code_actions
-      expose_as_code_action = {"fix_all", "add_missing_imports", "remove_unused"},
+      expose_as_code_action = { "fix_all", "add_missing_imports", "remove_unused" },
       -- string|nil - specify a custom path to `tsserver.js` file, if this is nil or file under path
       -- not exists then standard path resolution strategy is applied
       -- tsserver_path = nil,
@@ -31,7 +31,11 @@ function M.config()
       tsserver_max_memory = "auto",
       -- described below
       -- tsserver_format_options = {},
-      -- tsserver_file_preferences = {},
+      tsserver_file_preferences = {
+        includeInlayParameterNameHints = "all",
+        -- includeCompletionsForModuleExports = true,
+        -- quotePreference = "auto",
+      },
     },
   }
 end
