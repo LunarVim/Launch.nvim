@@ -1,6 +1,5 @@
 local M = {
   "SmiteshP/nvim-navic",
-  commit = "e6da6f74d89de65258ea7e98e22103ff5de6dcf5"
 }
 
 function M.config()
