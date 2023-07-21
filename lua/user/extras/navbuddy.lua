@@ -1,7 +1,10 @@
 local M = {
   "SmiteshP/nvim-navbuddy",
   dependencies = {
-    "SmiteshP/nvim-navic",
+    {
+      "SmiteshP/nvim-navic",
+      commit = "6e8850a524307814decc1b195a2c8a51482a9886",
+    },
     "MunifTanjim/nui.nvim",
   },
 }
