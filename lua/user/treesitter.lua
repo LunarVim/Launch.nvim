@@ -11,10 +11,10 @@ local M = {
       "JoosepAlviste/nvim-ts-context-commentstring",
       event = "VeryLazy",
     },
-    -- {
-    --   "HiPhish/nvim-ts-rainbow2",
-    --   event = "VeryLazy",
-    -- },
+    {
+      "HiPhish/nvim-ts-rainbow2",
+      event = "VeryLazy",
+    },
     {
       "windwp/nvim-ts-autotag",
       event = "VeryLazy",
@@ -78,23 +78,23 @@ function M.config()
       },
     },
 
-    -- rainbow = {
-    --   enable = false,
-    --   query = {
-    --     "rainbow-parens",
-    --   },
-    --   strategy = require("ts-rainbow").strategy.global,
-    --   hlgroups = {
-    --     -- "TSRainbowRed",
-    --     "TSRainbowBlue",
-    --     -- "TSRainbowOrange",
-    --     -- "TSRainbowCoral",
-    --     "TSRainbowPink",
-    --     "TSRainbowYellow",
-    --     -- "TSRainbowViolet",
-    --     -- "TSRainbowGreen",
-    --   },
-    -- },
+    rainbow = {
+      enable = false,
+      query = {
+        "rainbow-parens",
+      },
+      strategy = require("ts-rainbow").strategy.global,
+      hlgroups = {
+        -- "TSRainbowRed",
+        "TSRainbowBlue",
+        -- "TSRainbowOrange",
+        -- "TSRainbowCoral",
+        "TSRainbowPink",
+        "TSRainbowYellow",
+        -- "TSRainbowViolet",
+        -- "TSRainbowGreen",
+      },
+    },
   }
 end
 
