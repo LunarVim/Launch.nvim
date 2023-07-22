@@ -96,6 +96,7 @@ return {
             line.sep("", hl, theme.fill),
             tab.is_current() and "" or "",
             tab_name(tab),
+            -- tab.close_btn("󰅖 "),
             -- window_count(tab),
             -- change_mark(tab),
             -- line.sep(" ", hl, theme.fill),
