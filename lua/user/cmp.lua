@@ -48,6 +48,7 @@ function M.config()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
   require("luasnip/loaders/from_vscode").lazy_load()
+  require("luasnip").filetype_extend("typescriptreact", { "html" })
 
   local check_backspace = function()
     local col = vim.fn.col "." - 1
