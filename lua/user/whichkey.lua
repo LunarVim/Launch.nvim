@@ -9,6 +9,7 @@ function M.config()
     ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+    ["n"] = { "<cmd>Navbuddy<cr>", "Nav" },
     b = {
       name = "Buffers",
       -- j = { "<cmd>BufferLinePick<cr>", "Jump" },
@@ -256,7 +257,7 @@ function M.config()
     k = { "<cmd>BookmarkPrev<cr>", "Prev" },
     c = { "<cmd>BookmarkClear<cr>", "Clear" },
     l = { "<cmd>BookmarkList<cr>", "List" },
-    f = { "<cmd>FilemarkToggle<cr>", "Mark File" },
+    -- f = { "<cmd>FilemarkToggle<cr>", "Mark File" },
     h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
     -- ["."] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },
     -- [","] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
