@@ -3,10 +3,14 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
+
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
+-- keymap to open nvim config
+keymap("n", "<leader>lc", ":e $MYVIMRC <CR>", opts)
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -59,6 +63,13 @@ keymap("n", "<leader>sp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>sb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>sw", ":GrepperGit <C-r><C-w><CR>")
 
+-- Trouble
+keymap("n", "<leader>tt", ":TroubleToggle<CR>", opts)
+keymap("n", "<leader>tw", ":TroubleToggle workspace_diagnostics<CR>", opts)
+keymap("n", "<leader>td", ":TroubleToggle document_diagnostics<CR>", opts)
+keymap("n", "<leader>tq", ":TroubleToggle quickfix<CR>", opts)
+keymap("n", "<leader>tr", ":TroubleToggle lsp_references<CR>", opts)
+
 -- UndoTree
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 
@@ -69,8 +80,6 @@ keymap("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", opts)
 keymap("n", "<leader>gj", "<cmd>Gitsigns next_hunk<CR>", opts)
 keymap("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<CR>", opts)
 keymap("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", opts)
-keymap("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", opts)
-keymap("n", "<leader>gc", "<cmd>DiffviewClose<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
@@ -114,7 +123,7 @@ keymap("v", "<leader>d", "\"_d")
 
 
 keymap("n", "<C-n>", "<cmd>cnext<CR>zz")
-keymap("n", "<C-t>", "<cmd>cprev<CR>zz")
+keymap("n", "<C-p>", "<cmd>cprev<CR>zz")
 keymap("n", "<leader>j", "<cmd>lnext<CR>zz")
 keymap("n", "<leader>k", "<cmd>lprev<CR>zz")
 

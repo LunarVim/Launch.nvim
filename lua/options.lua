@@ -1,5 +1,5 @@
 vim.opt.backup = false                          -- creates a backup file
-vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+vim.opt.clipboard = ""               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
@@ -41,3 +41,4 @@ vim.opt.whichwrap:append "<,>,[,],h,l"          -- keys allowed to move to the p
 vim.opt.iskeyword:append "-"                    -- treats words with `-` as single words
 vim.opt.formatoptions:remove { "c", "r", "o" }  -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
+vim.opt.relativenumber = true

@@ -30,4 +30,16 @@ M.opts = {
   },
 }
 
+function M.config()
+  require("telescope").setup {
+    pickers = {
+      colorscheme = {
+        enable_preview = true
+      }
+    }
+
+  }
+end
+
+
 return M
