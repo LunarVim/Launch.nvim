@@ -38,29 +38,29 @@ function M.config()
       diffview = true,
     },
     -- Setting any section to `false` will make the section not render at all
-    sections = {
-      untracked = {
-        folded = false,
-      },
-      unstaged = {
-        folded = false,
-      },
-      staged = {
-        folded = false,
-      },
-      stashes = {
-        folded = true,
-      },
-      unpulled = {
-        folded = true,
-      },
-      unmerged = {
-        folded = false,
-      },
-      recent = {
-        folded = true,
-      },
-    },
+    -- sections = {
+    --   untracked = {
+    --     folded = false,
+    --   },
+    --   unstaged = {
+    --     folded = false,
+    --   },
+    --   staged = {
+    --     folded = false,
+    --   },
+    --   stashes = {
+    --     folded = true,
+    --   },
+    --   unpulled = {
+    --     folded = true,
+    --   },
+    --   unmerged = {
+    --     folded = false,
+    --   },
+    --   recent = {
+    --     folded = true,
+    --   },
+    -- },
     -- override/add mappings
     -- mappings = {
     --   -- modify status buffer mappings

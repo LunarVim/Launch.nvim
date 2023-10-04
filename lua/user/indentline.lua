@@ -1,6 +1,7 @@
 local M = {
   "lukas-reineke/indent-blankline.nvim",
   event = "VeryLazy",
+  commit = "9637670896b68805430e2f72cf5d16be5b97a22a",
 }
 
 function M.config()
@@ -27,6 +28,26 @@ function M.config()
     use_treesitter = true,
     show_current_context = true,
   }
+
+  -- indent = { char = icons.ui.LineMiddle },
+  -- whitespace = {
+  --   remove_blankline_trail = true,
+  -- },
+  --
+  -- exclude = {
+  --   filetypes = {
+  --     "help",
+  --     "startify",
+  --     "dashboard",
+  --     "lazy",
+  --     "neogitstatus",
+  --     "NvimTree",
+  --     "Trouble",
+  --     "text",
+  --   },
+  --   buftypes = { "terminal", "nofile" },
+  -- },
+  -- scope = { enabled = false },
 end
 
 return M

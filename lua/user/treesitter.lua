@@ -11,10 +11,10 @@ local M = {
       "JoosepAlviste/nvim-ts-context-commentstring",
       event = "VeryLazy",
     },
-    {
-      "HiPhish/nvim-ts-rainbow2",
-      event = "VeryLazy",
-    },
+    -- {
+    --   "HiPhish/nvim-ts-rainbow2",
+    --   event = "VeryLazy",
+    -- },
     {
       "windwp/nvim-ts-autotag",
       event = "VeryLazy",
@@ -26,25 +26,32 @@ local M = {
   },
 }
 function M.config()
-  local configs = require "nvim-treesitter.configs"
-
-  configs.setup {
+  require("nvim-treesitter.configs").setup {
     ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
-    -- ensure_installed = "all"
     ignore_install = { "" },
     sync_install = false,
-    highlight = { enable = true },
-    autopairs = { enable = true },
+    highlight = {
+      enable = true,
+      disable = { "markdown" },
+      additional_vim_regex_highlighting = false,
+    },
+
     indent = { enable = true },
+
     matchup = {
       enable = { "astro" },
       disable = { "lua" },
     },
+
+    autotag = { enable = true },
+
     context_commentstring = {
       enable = true,
       enable_autocmd = false,
     },
-    autotag = { enable = true },
+
+    autopairs = { enable = true },
+
     textobjects = {
       select = {
         enable = true,
@@ -77,25 +84,33 @@ function M.config()
         },
       },
     },
-
-    rainbow = {
-      enable = false,
-      query = {
-        "rainbow-parens",
-      },
-      strategy = require("ts-rainbow").strategy.global,
-      hlgroups = {
-        -- "TSRainbowRed",
-        "TSRainbowBlue",
-        -- "TSRainbowOrange",
-        -- "TSRainbowCoral",
-        "TSRainbowPink",
-        "TSRainbowYellow",
-        -- "TSRainbowViolet",
-        -- "TSRainbowGreen",
-      },
-    },
   }
+
+  -- local configs = require "nvim-treesitter.configs"
+  --
+  -- configs.setup {
+  --   -- modules = {
+  --   --
+  --   --
+  --   --   rainbow = {
+  --   --     enable = false,
+  --   --     query = {
+  --   --       "rainbow-parens",
+  --   --     },
+  --   --     strategy = require("ts-rainbow").strategy.global,
+  --   --     hlgroups = {
+  --   --       -- "TSRainbowRed",
+  --   --       "TSRainbowBlue",
+  --   --       -- "TSRainbowOrange",
+  --   --       -- "TSRainbowCoral",
+  --   --       "TSRainbowPink",
+  --   --       "TSRainbowYellow",
+  --   --       -- "TSRainbowViolet",
+  --   --       -- "TSRainbowGreen",
+  --   --     },
+  --   --   },
+  --   -- },
+  -- }
 end
 
 return M

@@ -60,7 +60,7 @@ function M.config()
       lualine_y = { "filetype" },
       lualine_z = { "progress" },
     },
-    extensions = { "lazy", "quickfix", "trouble", "man", "fugitive" },
+    extensions = { "quickfix", "man", "fugitive" },
   }
 end
 
