@@ -1,20 +1,24 @@
 local M = {
   "HiPhish/rainbow-delimiters.nvim",
-  lazy = true,
 }
 
 function M.config()
-  -- This module contains a number of default definitions
   local rainbow_delimiters = require "rainbow-delimiters"
 
   vim.g.rainbow_delimiters = {
-    strategy = {
-      [""] = rainbow_delimiters.strategy["global"],
-      vim = rainbow_delimiters.strategy["local"],
-    },
+    -- strategy = {
+    --   [""] = rainbow_delimiters.strategy["global"],
+    --   vim = rainbow_delimiters.strategy["local"],
+    -- },
     query = {
       [""] = "rainbow-delimiters",
-      lua = "rainbow-blocks",
+      lua = "rainbow-parens",
+      typescript = "rainbow-parens",
+      javascript = "rainbow-parens",
+      typescriptreact = "rainbow-parens",
+      javascriptreact = "rainbow-parens",
+      tsx = "rainbow-parens",
+      jsx = "rainbow-parens",
     },
     highlight = {
 
@@ -27,6 +31,7 @@ function M.config()
       -- "TSRainbowViolet",
       -- "TSRainbowGreen",
 
+      -- TODO: define these in colorscheme
       -- "RainbowDelimiterRed",
       -- "RainbowDelimiterYellow",
       -- "RainbowDelimiterBlue",
