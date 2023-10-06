@@ -9,7 +9,7 @@ function M.config()
     ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
-    ["n"] = { "<cmd>Navbuddy<cr>", "Nav" },
+    ["o"] = { "<cmd>Navbuddy<cr>", "Nav" },
     b = {
       name = "Buffers",
       -- j = { "<cmd>BufferLinePick<cr>", "Jump" },
@@ -58,6 +58,18 @@ function M.config()
       d = { "<cmd>Lazy debug<cr>", "Debug" },
     },
 
+    n = {
+      name = "Nostr",
+      k = { '<cmd>lua require("nostr").generate_keys()<cr>', "Generate Keys" },
+      a = { '<cmd>lua require("nostr").add_relay()<cr>', "Add Relay" },
+      r = { '<cmd>lua require("nostr").remove_relay()<cr>', "Remove Relay" },
+      l = { '<cmd>lua require("nostr").list_relays()<cr>', "List Relays" },
+      s = { '<cmd>lua require("nostr").set_active_relay()<cr>', "Set Active Relay" },
+      p = { '<cmd>lua require("nostr").publish_note()<cr>', "Publish Note" },
+      d = { '<cmd>lua require("nostr").decode()<cr>', "Decode" },
+      e = { '<cmd>lua require("nostr").encode()<cr>', "Encode" },
+    },
+
     f = {
       name = "Find",
       b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -103,12 +115,14 @@ function M.config()
         "Git Diff",
       },
     },
+    -- vim.lsp.buf.format({timeout_ms = 10000})
+
     l = {
       name = "LSP",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
       d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
       w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-      f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
+      f = { "<cmd>lua vim.lsp.buf.format({timeout_ms = 1000000})<cr>", "Format" },
       i = { "<cmd>LspInfo<cr>", "Info" },
       I = { "<cmd>Mason<cr>", "Mason Info" },
       j = {
