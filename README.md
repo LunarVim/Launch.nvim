@@ -185,7 +185,7 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-- [vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- [mini.cursorword](https://github.com/echasnovski/min.cursorword)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ---
