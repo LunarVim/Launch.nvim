@@ -179,7 +179,7 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-- [vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- [mini.cursorword](https://github.com/echasnovski/mini.cursorword)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
