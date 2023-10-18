@@ -1,28 +1,27 @@
 local M = {
   "ahmedkhalf/project.nvim",
-  commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
-  dependencies = {
-    {
-      "nvim-telescope/telescope.nvim",
-      event = "Bufenter",
-      cmd = { "Telescope" },
-    },
-  },
+  event = "VeryLazy",
+  commit = "8c6bad7d22eef1b71144b401c9f74ed01526a4fb",
 }
 
 function M.config()
-  local project = require "project_nvim"
-  project.setup {
-
-    -- detection_methods = { "lsp", "pattern" }, -- NOTE: lsp detection will get annoying with multiple langs in one project
+  require("project_nvim").setup {
+    active = true,
+    on_config_done = nil,
+    manual_mode = false,
     detection_methods = { "pattern" },
-
-    -- patterns used to detect root dir, when **"pattern"** is in detection_methods
-    patterns = { ".git", "Makefile", "package.json" },
+    patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
+    ignore_lsp = {},
+    exclude_dirs = {},
+    show_hidden = false,
+    silent_chdir = true,
+    scope_chdir = "global",
   }
 
-  local telescope = require "telescope"
-  telescope.load_extension "projects"
+  local opts = { noremap = true, silent = true }
+  local keymap = vim.api.nvim_set_keymap
+
+  keymap("n", "<c-p>", ":lua require('telescope').extensions.projects.projects()<CR>", opts)
 end
 
 return M
