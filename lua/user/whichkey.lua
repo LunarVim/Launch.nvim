@@ -65,9 +65,12 @@ function M.config()
       r = { '<cmd>lua require("nostr").remove_relay()<cr>', "Remove Relay" },
       l = { '<cmd>lua require("nostr").list_relays()<cr>', "List Relays" },
       s = { '<cmd>lua require("nostr").set_active_relay()<cr>', "Set Active Relay" },
-      p = { '<cmd>lua require("nostr").publish_note()<cr>', "Publish Note" },
+      S = { '<cmd>lua require("nostr").publish_snippet()<cr>', "Publish Snippet" },
+      n = { '<cmd>lua require("nostr").publish_note()<cr>', "Publish Note" },
       d = { '<cmd>lua require("nostr").decode()<cr>', "Decode" },
       e = { '<cmd>lua require("nostr").encode()<cr>', "Encode" },
+      b = { '<cmd>lua require("nostr").publish_blog()<cr>', "Publish Blog" },
+      B = { '<cmd>lua require("nostr").publish_bounty()<cr>', "Publish Bounty" },
     },
 
     f = {
