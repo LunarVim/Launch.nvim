@@ -1,5 +1,5 @@
 local M = {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
 }
 
 function M.config()
