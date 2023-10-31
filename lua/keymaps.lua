@@ -58,6 +58,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>sf", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>sg", ":Telescope git_files<CR>", opts)
 keymap("n", "<leader>st", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>sp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>sb", ":Telescope buffers<CR>", opts)
