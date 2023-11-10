@@ -11,6 +11,8 @@ M.servers = {
   "yamlls",
   "gopls",
   "sqls",
+  "solargraph",
+  "theme_check"
 }
 
 return M
