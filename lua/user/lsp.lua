@@ -51,6 +51,10 @@ function M.config()
 
     server = vim.split(server, "@")[1]
 
+    if server == "theme_check" then
+      Opts.filetypes = { "liquid", "json" }
+    end
+
     local require_ok, conf_opts = pcall(require, "settings." .. server)
     if require_ok then
       Opts = vim.tbl_deep_extend("force", conf_opts, Opts)

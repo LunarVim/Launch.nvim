@@ -12,6 +12,7 @@ M.servers = {
   "gopls",
   "sqls",
   "solargraph",
+  "tailwindcss",
   "theme_check"
 }
 
