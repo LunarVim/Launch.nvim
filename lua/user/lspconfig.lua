@@ -60,6 +60,7 @@ function M.config()
     "yamlls",
     "marksman",
     "tailwindcss",
+    "gopls",
   }
 
   local default_diagnostic_config = {
