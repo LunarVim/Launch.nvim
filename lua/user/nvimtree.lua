@@ -1,31 +1,22 @@
 local M = {
   "nvim-tree/nvim-tree.lua",
   event = "VeryLazy",
-  commit = "40b9b887d090d5da89a84689b4ca0304a9649f62",
 }
 
 function M.config()
-  local function my_on_attach(bufnr)
-    local api = require "nvim-tree.api"
-
-    local function opts(desc)
-      return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-    end
-
-    api.config.mappings.default_on_attach(bufnr)
-
-    vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
-    vim.keymap.set("n", "h", api.node.navigate.parent_close, opts "Close Directory")
-    vim.keymap.set("n", "v", api.node.open.vertical, opts "Open: Vertical Split")
-    vim.keymap.del("n", "<C-k>", { buffer = bufnr })
-    vim.keymap.set("n", "<S-k>", api.node.open.preview, opts "Open Preview")
-  end
+  local wk = require "which-key"
+  wk.register {
+    ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+  }
 
   local icons = require "user.icons"
 
   require("nvim-tree").setup {
-    on_attach = my_on_attach,
+    hijack_netrw = false,
     sync_root_with_cwd = true,
+    view = {
+      relativenumber = true,
+    },
     renderer = {
       add_trailing = false,
       group_empty = false,
