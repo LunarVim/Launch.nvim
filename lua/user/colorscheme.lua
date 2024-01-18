@@ -1,6 +1,7 @@
-local colorscheme = "catppuccin"
+local M = { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 
-local status_ok, _ = pcall(vim.cmd.colorscheme, colorscheme)
-if not status_ok then
-  return
+function M.config()
+  vim.cmd.colorscheme "catppuccin"
 end
+
+return M
