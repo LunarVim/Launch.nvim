@@ -8,40 +8,300 @@ if not dap_ui_status_ok then
   return
 end
 
--- local dap_install_status_ok, dap_install = pcall(require, "dap-install")
--- if not dap_install_status_ok then
---   return
--- end
---
--- dap_install.setup {}
---
--- dap_install.config("python", {})
---
--- dap_install.config("jsnode", {})
--- add other configs here
-local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
-dap.adapters.node2 = {
-  type = 'executable',
-  command = 'node-debug2-adapter',
-  args = {},
+
+-- Supporting functions
+local function get_args_from_user()
+    local args_string = vim.fn.input('Debug Args: ')
+    return vim.split(args_string, " ")
+end
+
+-- Python adapter configuration
+dap.adapters.python = function(cb, config)
+  if config.request == 'attach' then
+    ---@diagnostic disable-next-line: undefined-field
+    local port = (config.connect or config).port
+    ---@diagnostic disable-next-line: undefined-field
+    local host = (config.connect or config).host or '127.0.0.1'
+    cb({
+      type = 'server',
+      port = assert(port, '`connect.port` is required for a python `attach` configuration'),
+      host = host,
+      options = {
+        source_filetype = 'python',
+      },
+    })
+  else
+    cb({
+      type = 'executable',
+      -- TODO add path, should this come from the config?
+      command = config.pythonPath,
+      args = { '-m', 'debugpy.adapter' },
+      options = {
+        source_filetype = 'python',
+      },
+    })
+  end
+end
+
+dap.configurations.python = {
+  {
+    -- The first three options are required by nvim-dap
+    type = 'python'; -- the type here established the link to the adapter definition: `dap.adapters.python`
+    request = 'launch';
+    name = "Launch file";
+
+    -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+
+    program = "${file}"; -- This configuration will launch the current file if used.
+    pythonPath = function()
+      -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+      -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+      -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+      local cwd = vim.fn.getcwd()
+      if vim.fn.exists('$VIRTUAL_ENV') == 1 then
+        return vim.fn.expand('$VIRTUAL_ENV') .. '/bin/python'
+      elseif vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+        return cwd .. '/venv/bin/python'
+      elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+        return cwd .. '/.venv/bin/python'
+      else
+        return '/usr/bin/python'
+      end
+    end;
+  },
 }
-dap.configurations.javascript = {
+--
+-- -- Node adapter configuration
+-- dap.adapters.node2 = {
+--   type = 'executable',
+--   command = 'node-debug2-adapter',
+--   args = {},
+-- }
+-- dap.configurations.javascript = {
+--   {
+--     name = 'Launch',
+--     type = 'node2',
+--     request = 'launch',
+--     program = '${file}',
+--     cwd = vim.fn.getcwd(),
+--     sourceMaps = true,
+--     protocol = 'inspector',
+--     console = 'integratedTerminal',
+--   },
+--   {
+--     name = 'Attach to process',
+--     type = 'node2',
+--     request = 'attach',
+--     processId = require'dap.utils'.pick_process,
+--   },
+--   {
+--     name = 'Attach to Docker Node',
+--     type = 'node2',
+--     request = 'attach',
+--     address = 'localhost',
+--     port = 9229,
+--     localRoot = vim.fn.getcwd(),
+--     remoteRoot = '/usr/src/app',
+--     sourceMaps = true,
+--     protocol = 'inspector',
+--     skipFiles = {'<node_internals>/**'},
+--   },
+-- }
+-- dap.configurations.typescript = {
+--   {
+--     name = 'Launch',
+--     type = 'node2',
+--     request = 'launch',
+--     program = '${file}',
+--     cwd = vim.fn.getcwd(),
+--     sourceMaps = true,
+--     protocol = 'inspector',
+--     console = 'integratedTerminal',
+--   },
+--   {
+--     name = 'Attach to process',
+--     type = 'node2',
+--     request = 'attach',
+--     processId = require'dap.utils'.pick_process,
+--   },
+--   {
+--     name = 'Attach to Docker Node',
+--     type = 'node2',
+--     request = 'attach',
+--     address = 'localhost',
+--     port = 9229,
+--     localRoot = "${workspaceFolder}",
+--     remoteRoot = '/usr/src/app',
+--     skipFiles = {'<node_internals>/**'},
+--   },
+-- }
+-- 
+
+require('dap-vscode-js').setup({
+  node_path = 'node',
+  debugger_path = os.getenv('HOME') .. '/.DAP/vscode-js-debug',
+  adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
+})
+
+local exts = {
+  'javascript',
+  'typescript',
+  'javascriptreact',
+  'typescriptreact',
+  -- using pwa-chrome
+  'vue',
+  'svelte',
+}
+
+for _, ext in ipairs(exts) do
+  dap.configurations[ext] = {
+    {
+      type = 'pwa-node',
+      request = 'launch',
+      name = 'Launch Current File (pwa-node)',
+      cwd = vim.fn.getcwd(),
+      args = { '${file}' },
+      sourceMaps = true,
+      protocol = 'inspector',
+    },
+    {
+      type = 'pwa-node',
+      request = 'launch',
+      name = 'Launch Current File (pwa-node with ts-node)',
+      cwd = vim.fn.getcwd(),
+      runtimeArgs = { '--loader', 'ts-node/esm' },
+      runtimeExecutable = 'node',
+      args = { '${file}' },
+      sourceMaps = true,
+      protocol = 'inspector',
+      skipFiles = { '<node_internals>/**', 'node_modules/**' },
+      resolveSourceMapLocations = {
+        "${workspaceFolder}/**",
+        "!**/node_modules/**",
+      },
+    },
+    {
+      type = 'pwa-node',
+      request = 'launch',
+      name = 'Launch Current File (pwa-node with deno)',
+      cwd = vim.fn.getcwd(),
+      runtimeArgs = { 'run', '--inspect-brk', '--allow-all', '${file}' },
+      runtimeExecutable = 'deno',
+      attachSimplePort = 9229,
+    },
+    {
+      type = 'pwa-node',
+      request = 'launch',
+      name = 'Launch Test Current File (pwa-node with jest)',
+      cwd = vim.fn.getcwd(),
+      runtimeArgs = { '${workspaceFolder}/node_modules/.bin/jest' },
+      runtimeExecutable = 'node',
+      args = { '${file}', '--coverage', 'false'},
+      rootPath = '${workspaceFolder}',
+      sourceMaps = true,
+      console = 'integratedTerminal',
+      internalConsoleOptions = 'neverOpen',
+      skipFiles = { '<node_internals>/**', 'node_modules/**' },
+    },
+    {
+      type = 'pwa-node',
+      request = 'launch',
+      name = 'Launch Test Current File (pwa-node with vitest)',
+      cwd = vim.fn.getcwd(),
+      program = '${workspaceFolder}/node_modules/vitest/vitest.mjs',
+      args = { '--inspect-brk', '--threads', 'false', 'run', '${file}' },
+      autoAttachChildProcesses = true,
+      smartStep = true,
+      console = 'integratedTerminal',
+      skipFiles = { '<node_internals>/**', 'node_modules/**' },
+    },
+    {
+      type = 'pwa-node',
+      request = 'launch',
+      name = 'Launch Test Current File (pwa-node with deno)',
+      cwd = vim.fn.getcwd(),
+      runtimeArgs = { 'test', '--inspect-brk', '--allow-all', '${file}' },
+      runtimeExecutable = 'deno',
+      attachSimplePort = 9229,
+    },
+    {
+      type = 'pwa-chrome',
+      request = 'attach',
+      name = 'Attach Program (pwa-chrome = { port: 9222 })',
+      program = '${file}',
+      cwd = vim.fn.getcwd(),
+      sourceMaps = true,
+      port = 9222,
+      webRoot = '${workspaceFolder}',
+    },
+    {
+      type = 'pwa-node',
+      request = 'attach',
+      name = 'Attach Program (Node2)',
+      processId = require('dap.utils').pick_process,
+    },
+    {
+      type = 'pwa-node',
+      request = 'attach',
+      name = 'Attach Program (Node2 with ts-node)',
+      cwd = vim.fn.getcwd(),
+      sourceMaps = true,
+      skipFiles = { '<node_internals>/**' },
+      port = 9229,
+    },
+    {
+      type = 'pwa-node',
+      request = 'attach',
+      name = 'Attach to Docker Node',
+      address = 'localhost',
+      sourceMaps = true,
+      port = 9229,
+      localRoot = vim.fn.getcwd(),
+      remoteRoot = '/usr/src/app',
+      skipFiles = {'<node_internals>/**'},
+    },
+    {
+      type = 'pwa-node',
+      request = 'attach',
+      name = 'Attach Program (pwa-node)',
+      cwd = vim.fn.getcwd(),
+      processId = require('dap.utils').pick_process,
+      skipFiles = { '<node_internals>/**' },
+    },
+  }
+end
+
+-- Go adapter configuration
+dap.configurations.go = {
   {
     name = 'Launch',
-    type = 'node2',
+    type = 'go',
     request = 'launch',
     program = '${file}',
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = 'inspector',
-    console = 'integratedTerminal',
   },
   {
-    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-    name = 'Attach to process',
-    type = 'node2',
-    request = 'attach',
-    processId = require'dap.utils'.pick_process,
+    name = 'Launch w/ args',
+    type = 'go',
+    request = 'launch',
+    program = '${file}',
+    args = function()
+      return get_args_from_user()
+    end,
+  },
+  {
+    name = 'Debug Test',
+    type = 'go',
+    request = 'launch',
+    mode = 'test',
+    program = '${fileDirname}',
+  },
+}
+dap.adapters.go = {
+  type = 'server',
+  port = '${port}',
+  executable = {
+    command = vim.fn.stdpath("data") .. '/mason/bin/dlv',
+    args = { "dap", "-l", "127.0.0.1:${port}" },
   },
 }
 
