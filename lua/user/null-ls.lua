@@ -19,11 +19,12 @@ function M.config()
       -- null_ls.builtins.diagnostics.eslint,
       null_ls.builtins.completion.spell,
       formatting.goimports_reviser,
+      formatting.gofumpt,
       formatting.golines,
-
-      null_ls.builtins.diagnostics.flake8,
-      diagnostics.golangci_lint,
       formatting.black,
+
+      diagnostics.flake8,
+      diagnostics.golangci_lint,
     },
   }
 end
