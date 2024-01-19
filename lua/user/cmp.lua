@@ -112,12 +112,12 @@ function M.config()
       format = function(entry, vim_item)
         vim_item.kind = icons.kind[vim_item.kind]
         vim_item.menu = ({
-          nvim_lsp = "",
-          nvim_lua = "",
-          luasnip = "",
-          buffer = "",
-          path = "",
-          emoji = "",
+          nvim_lsp = "LSP",
+          nvim_lua = "LUA",
+          luasnip = "SNIP",
+          buffer = "BFR",
+          path = "PTH",
+          emoji = "EMJ",
         })[entry.source.name]
 
         if entry.source.name == "emoji" then

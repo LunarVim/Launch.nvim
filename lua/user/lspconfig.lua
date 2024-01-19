@@ -76,6 +76,7 @@ function M.config()
     "bashls",
     "jsonls",
     "yamlls",
+    "gopls",
   }
 
   local default_diagnostic_config = {

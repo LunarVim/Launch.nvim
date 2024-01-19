@@ -5,7 +5,6 @@ local M = {
   },
 }
 
-
 function M.config()
   local servers = {
     "lua_ls",
@@ -15,6 +14,7 @@ function M.config()
     "pyright",
     "bashls",
     "jsonls",
+		"yamlls",
   }
 
   require("mason").setup {
@@ -22,10 +22,7 @@ function M.config()
       border = "rounded",
     },
   }
-
-  require("mason-lspconfig").setup {
-    ensure_installed = servers,
-  }
+  require("mason-lspconfig").setup {}
 end
 
 return M
