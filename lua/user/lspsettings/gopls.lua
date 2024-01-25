@@ -7,7 +7,6 @@ return {
       staticcheck = true,
       format = {
         goimports = true,
-        goimports_reviser = true,
       },
       completion = {
         usePlaceholders = true,
