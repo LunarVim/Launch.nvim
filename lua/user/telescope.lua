@@ -23,8 +23,9 @@ function M.config()
 	require("telescope").setup {
 		defaults = {
 			layout_config = {
-				width = 0.6,
-				height = 0.6,
+				width = 0.8,
+				height = 0.7,
+				preview_width = 0.6,
 			},
 			prompt_prefix = icons.ui.Telescope .. " ",
 			selection_caret = icons.ui.Forward .. " ",
