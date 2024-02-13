@@ -1,12 +1,12 @@
 local M = {
-  "jinh0/eyeliner.nvim",
-  event = "VeryLazy",
+	"jinh0/eyeliner.nvim",
+	event = "VeryLazy",
 }
 
 function M.config()
-  require("eyeliner").setup {
-    highlight_on_key = true,
-  }
+	require("eyeliner").setup {
+		highlight_on_key = true,
+	}
 end
 
 return M
