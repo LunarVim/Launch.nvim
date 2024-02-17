@@ -15,7 +15,9 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	-- keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	keymap(bufnr, "n", "gr", "<Cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
+	keymap(bufnr, "n", "gs", "<Cmd>lua require('telescope.builtin').diagnostics()<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
@@ -77,6 +79,10 @@ function M.config()
 		"jsonls",
 		"yamlls",
 		"gopls",
+		"templ",
+		"emmet_ls",
+		"dockerls",
+		"htmx",
 	}
 
 	local default_diagnostic_config = {
