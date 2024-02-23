@@ -80,6 +80,7 @@ function M.config()
     "tailwindcss",
     "clangd",
     "volar",
+    "rust_analyzer",
   }
 
   local default_diagnostic_config = {
