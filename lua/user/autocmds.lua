@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  pattern = { "*" },
+  pattern = { "!vim" },
   callback = function()
     vim.cmd "checktime"
   end,
