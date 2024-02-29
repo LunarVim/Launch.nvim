@@ -12,9 +12,11 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
 	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	-- keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	keymap(bufnr, "n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", opts)
 	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	-- keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	keymap(bufnr, "n", "gI", "<cmd>lua require('telescope.builtin').lsp_implementations()<CR>", opts)
 	-- keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "gr", "<Cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
 	keymap(bufnr, "n", "gs", "<Cmd>lua require('telescope.builtin').diagnostics()<CR>", opts)
@@ -45,7 +47,7 @@ function M.config()
 	wk.register {
 		["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		["<leader>lf"] = {
-			"<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+			"<cmd>lua vim.lsp.buf.format({async = true})<cr>",
 			"Format",
 		},
 		["<leader>li"] = { "<cmd>LspInfo<cr>", "Info" },
@@ -83,6 +85,8 @@ function M.config()
 		"emmet_ls",
 		"dockerls",
 		"htmx",
+		"sqlls",
+		"rust_analyzer"
 	}
 
 	local default_diagnostic_config = {
