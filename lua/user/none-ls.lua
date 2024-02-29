@@ -13,24 +13,34 @@ function M.config()
 	local completion = null_ls.builtins.completion
 	local actions = null_ls.builtins.code_actions
 
+	-- local sqlargs = { "--dialect", "postgres" } -- change to your dialect
+
 	null_ls.setup {
-		debug = false,
+		debug = true,
 		sources = {
 			-- LUA
 			-- formatting.stylua,
 
-			-- golang
+			-- SQL
+			-- formatting.sql_formatter,
+			-- diagnostics.sqlfluff.with({
+			-- 	extra_args = sqlargs,
+			-- }),
+			-- formatting.sqlfluff.with({
+			-- 	extra_args = sqlargs
+			-- }),
+
+			-- GOLANG
 			formatting.goimports_reviser,
 			formatting.gofumpt,
 			formatting.golines,
-
 			diagnostics.golangci_lint,
 			actions.gomodifytags,
 
-			formatting.eslint,
+			-- formatting.eslint,
 
 			-- PYTHON
-			diagnostics.flake8,
+			-- diagnostics.flake8,
 			formatting.black,
 
 			formatting.prettier.with {
