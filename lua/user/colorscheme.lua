@@ -8,11 +8,13 @@ local M = {
 		"luisiacc/gruvbox-baby",
 		"sainnhe/everforest",
 		"EdenEast/nightfox.nvim",
+		{ "rose-pine/neovim", name = "rose-pine" },
+		{ "EdenEast/nightfox.nvim" } -- lazy
 	},
 }
 
 function M.config()
-	vim.cmd.colorscheme "gruvbox-material"
+	vim.cmd.colorscheme "gruvbox-baby"
 end
 
 return M
