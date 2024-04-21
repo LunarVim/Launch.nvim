@@ -24,6 +24,7 @@ function M.config()
       -- formatting.eslint,
       -- diagnostics.flake8,
       -- diagnostics.cpplint,
+      diagnostics.jdtls,
       null_ls.builtins.completion.spell,
     },
   }
