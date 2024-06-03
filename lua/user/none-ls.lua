@@ -37,7 +37,7 @@ function M.config()
 			diagnostics.golangci_lint,
 			actions.gomodifytags,
 
-			-- formatting.eslint,
+			formatting.eslint,
 
 			-- PYTHON
 			-- diagnostics.flake8,
