@@ -12,35 +12,34 @@ local M = {
 		{ "rose-pine/neovim", name = "rose-pine" },
 		"Shatur/neovim-ayu",
 		"olimorris/onedarkpro.nvim",
+		"RRethy/base16-nvim"
 	},
 }
 
 function M.config()
 	-- Example config in Lua
-	-- vim.g.gruvbox_baby_function_style = "italic"
-	vim.g.gruvbox_baby_keyword_style = "italic"
+	-- vim.g.gruvbox_baby_keyword_style = "italic"
 	-- vim.g.gruvbox_baby_background_color = "dark"
-	vim.g.gruvbox_baby_transparent_mode = "true"
-	vim.g.gruvbox_baby_use_original_palette = true
+	-- vim.g.gruvbox_baby_use_original_palette = true
 
+	-- To disable highlights for supported plugin(s), call the `with_config` function **before** setting the colorscheme.
+	-- These are the defaults.
+	require('base16-colorscheme').with_config({
+		telescope = true,
+		indentblankline = true,
+		notify = true,
+		ts_rainbow = true,
+		cmp = true,
+		illuminate = true,
+		dapui = true,
+	})
+	if vim.env.MACOS_THEME_MODE == "dark" then
+		vim.cmd('colorscheme tokyonight-night')
+	else
+		vim.cmd('colorscheme tokyonight-moon')
+	end
 
-	-- Each highlight group must follow the structure:
-	-- ColorGroup = {fg = "foreground color", bg = "background_color", style = "some_style(:h attr-list)"}
-	-- See also :h highlight-guifg
-	-- Example:
-	-- vim.g.gruvbox_baby_highlights = { Normal = { fg = "#123123", bg = "NONE", style = "underline" } }
-
-	-- Enable telescope theme
-	-- vim.g.gruvbox_baby_telescope_theme = 1
-
-	-- Load the colorscheme
-	-- require("onedarkpro").setup({
-	-- 	highlights = {
-	-- 		CmpMenuSelected = { fg = "#FF0000", bg = "#FFFF00", italic = true }
-	-- 	}
-	-- })
-
-	vim.cmd.colorscheme "gruvbox-baby"
+	-- You can get the base16 colors **after** setting the colorscheme by name (base01, base02, etc.)
 end
 
 return M
