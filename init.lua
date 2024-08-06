@@ -28,3 +28,5 @@ spec "user.project"
 spec "user.indentline"
 spec "user.toggleterm"
 require "user.lazy"
+require "user.decode-gpg"
+

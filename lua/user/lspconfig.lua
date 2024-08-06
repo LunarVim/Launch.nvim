@@ -76,6 +76,11 @@ function M.config()
     "bashls",
     "jsonls",
     "yamlls",
+    "marksman",
+    "tailwindcss",
+    "clangd",
+    "volar",
+    "rust_analyzer",
   }
 
   local default_diagnostic_config = {

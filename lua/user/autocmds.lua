@@ -74,3 +74,11 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufWritePre"}, {
+  pattern = { "*.cpp", "*.hpp", "*.c", "*.h" },
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
+
