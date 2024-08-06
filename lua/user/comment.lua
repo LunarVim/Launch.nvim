@@ -11,12 +11,12 @@ local M = {
 
 function M.config()
   local wk = require "which-key"
-  wk.register {
-    ["<leader>/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
+  wk.add {
+    { "<leader>/", "<Plug>(comment_toggle_linewise_current)", desc = "Comment" },
   }
 
-  wk.register {
-    ["<leader>/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment", mode = "v" },
+  wk.add {
+    { "<leader>/", "<Plug>(comment_toggle_linewise_visual)", desc = "Comment", mode = "v" },
   }
 
   vim.g.skip_ts_context_commentstring_module = true
