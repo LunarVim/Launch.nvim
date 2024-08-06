@@ -12,6 +12,7 @@ local M = {
     "rouge8/neotest-rust",
     "lawrence-laz/neotest-zig",
     "rcasia/neotest-bash",
+    "nvim-neotest/nvim-nio",
   },
 }
 
