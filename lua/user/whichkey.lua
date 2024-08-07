@@ -6,8 +6,7 @@ function M.config()
   local which_key = require "which-key"
   which_key.setup {
     defaults = {
-      mode = "n",
-      prefix = "<leader>",
+      preset = "classic"
     },
     spec = {
       { "<leader>q", "<cmd>confirm q<CR>", desc = "Quit" },
@@ -29,34 +28,12 @@ function M.config()
       { "<leader>ao", "<cmd>tabonly<cr>", desc = "Only" },
       { "<leader>T", group = "Treesitter" },
     },
-    plugins = {
-      marks = true,
-      registers = true,
-      spelling = {
-        enabled = true,
-        suggestions = 20,
-      },
-      presets = {
-        operators = false,
-        motions = false,
-        text_objects = false,
-        windows = false,
-        nav = false,
-        z = false,
-        g = false,
-      },
-    },
     win = {
-      no_overlap = true,
-      border = "rounded",
-      position = "bottom",
-      padding = { 2, 2 },
+      border = "rounded"
     },
-    show_help = false,
-    show_keys = false,
     disable = {
-      buftypes = {},
-      filetypes = { "TelescopePrompt" },
+      bt = {},
+      ft = { "TelescopePrompt" },
     },
   }
 end
