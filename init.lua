@@ -30,3 +30,10 @@ spec "user.toggleterm"
 require "user.lazy"
 require "user.decode-gpg"
 
+-- temporary fix for clangd:
+---@class lsp.ClientCapabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+require("lspconfig").clangd.setup { capabilities = capabilities }
+
+
