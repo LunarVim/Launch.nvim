@@ -27,6 +27,8 @@ spec "user.alpha"
 spec "user.project"
 spec "user.indentline"
 spec "user.toggleterm"
+-- uncomment and install codelldb from :Mason; make sure that lldb is installed system-wide
+-- spec "user.dap"
 require "user.lazy"
 require "user.decode-gpg"
 
