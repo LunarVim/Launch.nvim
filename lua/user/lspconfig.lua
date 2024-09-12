@@ -57,21 +57,21 @@ function M.config()
   local icons = require "user.icons"
 
   local servers = {
-    "lua_ls",
-    "cssls",
-    "html",
-    "tsserver",
-    "eslint",
-    "tsserver",
-    "pyright",
     "bashls",
-    "jsonls",
-    "yamlls",
-    "marksman",
-    "tailwindcss",
     "clangd",
-    "volar",
+    "cmake",
+    "cssls",
+    "eslint",
+    "html",
+    "jsonls",
+    "lua_ls",
+    "marksman",
+    "pyright",
     "rust_analyzer",
+    "tailwindcss",
+    "ts_ls",
+    "volar",
+    "yamlls",
   }
 
   local default_diagnostic_config = {
