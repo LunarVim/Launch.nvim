@@ -21,35 +21,38 @@ M.config = function()
 
   require("gitsigns").setup {
     signs = {
+
+      -- Pretty sure these are defined in the theme.
       add = {
-        hl = "GitSignsAdd",
+        -- current_line_blame_formatter
+        -- hl = "GitSignsAdd",
         text = icons.ui.BoldLineMiddle,
-        numhl = "GitSignsAddNr",
-        linehl = "GitSignsAddLn",
+        -- numhl = "GitSignsAddNr",
+        -- linehl = "GitSignsAddLn",
       },
       change = {
-        hl = "GitSignsChange",
+        -- hl = "GitSignsChange",
         text = icons.ui.BoldLineDashedMiddle,
-        numhl = "GitSignsChangeNr",
-        linehl = "GitSignsChangeLn",
+        -- numhl = "GitSignsChangeNr",
+        -- linehl = "GitSignsChangeLn",
       },
       delete = {
-        hl = "GitSignsDelete",
+        -- hl = "GitSignsDelete",
         text = icons.ui.TriangleShortArrowRight,
-        numhl = "GitSignsDeleteNr",
-        linehl = "GitSignsDeleteLn",
+        -- numhl = "GitSignsDeleteNr",
+        -- linehl = "GitSignsDeleteLn",
       },
       topdelete = {
-        hl = "GitSignsDelete",
+        -- hl = "GitSignsDelete",
         text = icons.ui.TriangleShortArrowRight,
-        numhl = "GitSignsDeleteNr",
-        linehl = "GitSignsDeleteLn",
+        -- numhl = "GitSignsDeleteNr",
+        -- linehl = "GitSignsDeleteLn",
       },
       changedelete = {
-        hl = "GitSignsChange",
+        -- hl = "GitSignsChange",
         text = icons.ui.BoldLineMiddle,
-        numhl = "GitSignsChangeNr",
-        linehl = "GitSignsChangeLn",
+        -- numhl = "GitSignsChangeNr",
+        -- linehl = "GitSignsChangeLn",
       },
     },
     watch_gitdir = {
