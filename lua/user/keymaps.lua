@@ -7,6 +7,25 @@ vim.g.maplocalleader = " "
 
 keymap("n", "<C-i>", "<C-i>", opts)
 
+-- Press jk to enter normal mode
+keymap("i", "jk", "<ESC>", opts)
+
+-- Better save
+keymap("n", "<leader>s", ":w<CR>", opts)
+
+-- Resize with arrows
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+-- -- Navigate buffers
+keymap("n", "<leader>k", ":bnext<CR>", opts)
+keymap("n", "<leader>j", ":bprevious<CR>", opts)
+
+-- Clear highlights
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<m-h>", "<C-w>h", opts)
 keymap("n", "<m-j>", "<C-w>j", opts)
